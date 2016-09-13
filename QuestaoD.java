@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class QuestaoD {
 	public static void main(String[] args) {
-		Date start = new Date();
 		Scanner ler = new Scanner(System.in);
 		String[] entrada = ler.nextLine().split(" "); 
+		long tempoInicial = System.currentTimeMillis();
 		int a = Integer.parseInt(entrada[0]);
 		int b = Integer.parseInt(entrada[1]);
 		int c = Integer.parseInt(entrada[2]);
@@ -20,9 +20,9 @@ public class QuestaoD {
 		  ){
 			if(c%a==0){
 				boolean sucesso = false;
-				int aux = c/a;
+				int aux = c/2;
 				for(int i = a;i<=aux;i = i+a){
-					if(i%a == 0 && i%b != 0 && c%i == 0 && d%i != 0){
+					if(i%b != 0 && d%i != 0){
 						System.out.println(i);
 						sucesso = true;
 						break;
@@ -32,9 +32,8 @@ public class QuestaoD {
 				
 			}else System.out.println("-1");
 		}
-		Date now = new Date();
-		long millis = now.getTime() - start.getTime();
-		System.out.println(millis);
+		long tempoFinal = System.currentTimeMillis();
+		System.out.println(tempoFinal - tempoInicial);
 
 	}
 
